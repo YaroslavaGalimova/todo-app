@@ -25,7 +25,6 @@ public class Task {
     @NotEmpty
     @NotNull
     @Size(min = 1, max = 65000)
-    @Lob
     private String description;
 
     private boolean completed = false;
@@ -38,5 +37,5 @@ public class Task {
         this.completed = true;
     }
 
-    // :TODO: добавить тэги
+    // :TODO: добавить тэги хочу ещё
 }
