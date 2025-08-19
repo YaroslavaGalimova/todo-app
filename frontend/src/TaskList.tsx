@@ -21,12 +21,12 @@ function TaskList() {
   return (
     <div>
       <h2 className="HeaderName">Tasks</h2>
-      <ul>
+      <ul className="TaskList">
         {tasks.map(task => (
           <li key={task.id}>
             <h3 className="TaskTitle">{task.title}</h3>
             <p>{task.description}</p>
-            <p>{task.completed ? '✅ Done' : '🔄 Pending'}</p>
+            <p>{task.completed ? '✅ Done' : '🔄 In process'}</p>
           </li>
         ))}
       </ul>

@@ -36,6 +36,10 @@ public class TaskService {
         return taskRepo.findAll();
     }
 
+    public List<Task> findByStatus(boolean completed) {
+        return taskRepo.findByCompleted(completed);
+    }
+
     public List<Task> findAllSortedTasks(Comparator<Task> cmp) {
         return taskRepo.findAll().stream().sorted(cmp).toList();
     }
