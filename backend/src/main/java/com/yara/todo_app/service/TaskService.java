@@ -17,9 +17,10 @@ public class TaskService {
     }
 
     public void save(Task task) {
-        if (task != null) {
-            taskRepo.save(task);
+        if (task == null || task.getTitle() == null || task.getDescription() == null || task.getTitle().isEmpty()) {
+            throw new IllegalArgumentException("Task cannot be null");
         }
+        taskRepo.save(task);
     }
 
     public Task findById(Long id) {

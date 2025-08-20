@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import TaskList from './TaskList';
+import { AddForm } from './AddForm';
 
 function App() {
   return (
@@ -15,7 +16,10 @@ function App() {
           <li><a href="/about">About</a></li>
         </ul>
       </nav>
-      <TaskList />
+      <div className="MainContent">
+        <AddForm />
+        <TaskList />
+      </div>
       <footer className="Footer">
         <p>© Yara's Todo App. Summer pet-project.</p>
       </footer>
