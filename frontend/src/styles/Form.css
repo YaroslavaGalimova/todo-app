@@ -3,6 +3,7 @@ form {
     flex-direction: column;
     max-width: 400px;
     margin: 0 auto;
+    padding: 20px;
 }
 
 input, textarea {
@@ -23,4 +24,18 @@ button {
 
 button:hover {
     background-color: var(--primary-color);
+}
+
+.AddForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+
+.AddForm h2 {
+    margin-bottom: 20px;
+    color: var(--primary-color);
 }

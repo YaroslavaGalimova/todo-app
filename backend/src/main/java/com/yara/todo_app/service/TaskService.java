@@ -23,6 +23,14 @@ public class TaskService {
         taskRepo.save(task);
     }
 
+    public void finishTask(Task task) {
+        if (task == null || task.getId() == null) {
+            throw new IllegalArgumentException("Task cannot be null");
+        }
+        task.setCompleted(true);
+        taskRepo.save(task);
+    }
+
     public Task findById(Long id) {
         return id == null ? null : taskRepo.findById(id).orElse(null);
     }

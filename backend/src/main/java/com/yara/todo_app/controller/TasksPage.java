@@ -35,5 +35,20 @@ public class TasksPage {
         taskService.save(task);
         return task;
     }
+
+    @PostMapping("/finish")
+    public Task finishTask(@RequestBody Task task) {
+        taskService.finishTask(task);
+        return task;
+    }
+
+    @PostMapping("/finishById")
+    public Task finishTask(@RequestBody Long id) {
+        Task task = taskService.findById(id);
+        if (task != null) {
+            taskService.finishTask(task);
+        }
+        return task;
+    }
     
 }

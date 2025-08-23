@@ -2,6 +2,23 @@
   text-align: center;
 }
 
+.Body {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  min-height: 100vh;
+  background-color: var(--background-color);
+}
+
+.Sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20%;
+  margin-top: 20px;
+  margin-bottom: 100px;
+}
+
 .MainContent {
   display: flex;
   justify-content: space-around;
@@ -9,7 +26,6 @@
   width: 60%;
   margin-bottom: 100px;
 }
-
 
 .Header {
   padding: 20px;
@@ -76,7 +92,7 @@
   margin: 10px;
   max-width: 600px;
   margin: auto;
-  margin-bottom: 120px; /* Добавляем отступ снизу для футера */
+  margin-bottom: 120px;
 }
 
 .TaskTitle {
