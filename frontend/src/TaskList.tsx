@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { FinishForm } from './Forms';
 
 interface Task {
   id: number;
@@ -13,11 +14,10 @@ function TaskList() {
 
   useEffect(() => {
     fetch('/tasks/all')
-      .then(res => res.json())
-      .then(data => setTasks(data))
+      .then((res) => {console.log(res.body); return res.json();})
+      .then((data) => {console.log(data); setTasks(data);})
       .catch(err => console.error('Error fetching tasks:', err));
   }, []);
-
   return (
     <div>
       <h2 className="HeaderName">Tasks</h2>
@@ -27,6 +27,10 @@ function TaskList() {
             <h3 className="TaskTitle">{task.title}</h3>
             <p>{task.description}</p>
             <p>{task.completed ? '✅ Done' : '🔄 In process'}</p>
+            <hr />
+            <FinishForm task={task} onChange={(nTask) => {
+              setTasks(tasks.map(t => t.id === nTask.id ? nTask : t));
+            }} />
           </li>
         ))}
       </ul>
