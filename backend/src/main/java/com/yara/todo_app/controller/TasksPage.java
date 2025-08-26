@@ -50,5 +50,10 @@ public class TasksPage {
         }
         return task;
     }
+
+    @PostMapping("/delete")
+    public void removeTask(@RequestBody Task task) {
+        taskService.deleteById(task.getId());
+    }
     
 }

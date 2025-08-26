@@ -6,6 +6,19 @@ form {
     padding: 20px;
 }
 
+.checkbox {
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--light-background-color);
+    border-radius: 4px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
 input, textarea {
     margin-bottom: 12px;
     padding: 8px;

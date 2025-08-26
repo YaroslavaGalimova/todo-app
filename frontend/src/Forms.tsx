@@ -87,15 +87,28 @@ export function FinishForm(props: { task?: Task, onChange?: (x: Task) => void })
     );
 }
 
-// export function DeleteForm() {
+export function DeleteForm(props: {task? : Task, onChange?: (x: Task) => void}) {
+    const { task } = props;
 
-//     const handleDelete = (e) => {
+    const handleDelete = () => {
+        if (task === undefined) return;
 
-//     }
-    
-//     return (
-//         <form>
-//             <button type="submit">❌</button>
-//         </form>
-//     );
-// }
+        fetch('/tasks/delete', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(task),
+        })
+        .then(() => {
+            console.log('Task deleted');
+            if (props.onChange) {
+                props.onChange(task);
+            }
+        })
+        .catch(err => console.error('Error deleting task:', err));
+    };
+
+    return (
+        <button className="DeleteButton" onClick={handleDelete}>❌</button>
+    );
+
+}

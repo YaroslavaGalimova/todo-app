@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { FinishForm } from './Forms';
+import { DeleteForm, FinishForm } from './Forms';
 
 interface Task {
   id: number;
@@ -30,6 +30,9 @@ function TaskList() {
             <hr />
             <FinishForm task={task} onChange={(nTask) => {
               setTasks(tasks.map(t => t.id === nTask.id ? nTask : t));
+            }} />
+            <DeleteForm task={task} onChange={(nTask) => {
+              setTasks(tasks.filter(t => t.id !== nTask.id));
             }} />
           </li>
         ))}
