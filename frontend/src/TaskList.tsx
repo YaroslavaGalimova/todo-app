@@ -24,15 +24,17 @@ function TaskList() {
       <ul className="TaskList">
         {tasks.map(task => (
           <li key={task.id}>
-            <h3 className="TaskTitle">{task.title}</h3>
+            <h3 className="TaskTitle"> 
+              {task.title} 
+              <DeleteForm task={task} onChange={(nTask) => {
+                setTasks(tasks.filter(t => t.id !== nTask.id));
+              }} />
+            </h3>
             <p>{task.description}</p>
             <p>{task.completed ? '✅ Done' : '🔄 In process'}</p>
             <hr />
             <FinishForm task={task} onChange={(nTask) => {
               setTasks(tasks.map(t => t.id === nTask.id ? nTask : t));
-            }} />
-            <DeleteForm task={task} onChange={(nTask) => {
-              setTasks(tasks.filter(t => t.id !== nTask.id));
             }} />
           </li>
         ))}

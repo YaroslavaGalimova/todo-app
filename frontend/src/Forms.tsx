@@ -108,7 +108,7 @@ export function DeleteForm(props: {task? : Task, onChange?: (x: Task) => void}) 
     };
 
     return (
-        <button className="DeleteButton" onClick={handleDelete}>❌</button>
+        <button className="DeleteButton" onClick={handleDelete}>✗</button>
     );
 
 }

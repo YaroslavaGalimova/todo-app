@@ -6,17 +6,21 @@ form {
     padding: 20px;
 }
 
-.checkbox {
-    margin-right: 10px;
-    display: inline-block;
-    vertical-align: middle;
-    width: 20px;
-    height: 20px;
-    border: 2px solid var(--light-background-color);
-    border-radius: 4px;
+label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+
+.DeleteButton {
+    border: none;
+    color: red;
+    font-size: 16px;
     cursor: pointer;
-    width: 20px;
-    height: 20px;
+    float: right;
+    margin-left: 10px;
+    background: none;
 }
 
 input, textarea {
@@ -35,7 +39,7 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+button:hover .AddForm{
     background-color: var(--primary-color);
 }
 
