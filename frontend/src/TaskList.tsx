@@ -22,7 +22,7 @@ function TaskList() {
     <div>
       <h2 className="HeaderName">Tasks</h2>
       <ul className="TaskList">
-        {tasks.map(task => (
+        {tasks.filter(task => !task.completed).map(task => (
           <li key={task.id}>
             <h3 className="TaskTitle"> 
               {task.title} 

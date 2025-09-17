@@ -57,7 +57,7 @@ export function FinishForm(props: { task?: Task, onChange?: (x: Task) => void })
 
     const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (task === undefined) return;
-        if (!e.target.checked) return;
+        // if (!e.target.checked) return;
 
         const updatedTask = { ...task, completed: true }; // props напрямую менять нельзя - антипаттерн. создаю копию с полем completed = true.
 
@@ -108,7 +108,7 @@ export function DeleteForm(props: {task? : Task, onChange?: (x: Task) => void}) 
     };
 
     return (
-        <button className="DeleteButton" onClick={handleDelete}>✗</button>
+        <button className="DeleteButton" onClick={handleDelete}>x</button>
     );
 
 }
